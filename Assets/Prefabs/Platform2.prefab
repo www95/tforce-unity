@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2139648795723059008}
   - component: {fileID: 2058283228387835860}
   - component: {fileID: 1418312791037963119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 3357581222783813824}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a3f542d3d2bff454cbdf145e8ff8c692, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
