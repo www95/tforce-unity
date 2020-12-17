@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Update is called once per frame
+
     public float Speed;
 
+    void Start()
+    {
+        Destroy(gameObject, 2f);
+    }
 
     void Update()
     {
+        //Movimentar a bola para direita
         transform.Translate(Vector3.right * Speed * Time.deltaTime);
     }
 }

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-
-
-    private Transform backPoint;
     
+    private Transform backPoint;
+
     void Start()
     {
         backPoint = GameObject.Find("backPoint").GetComponent<Transform>();
@@ -15,8 +14,10 @@ public class Platform : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.x < backPoint.position.x){
+        if(transform.position.x < backPoint.position.x)
+        {
             Destroy(gameObject);
         }
+        
     }
 }
