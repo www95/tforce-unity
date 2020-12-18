@@ -30,18 +30,21 @@ public class PlatformGeneration : MonoBehaviour
    
     void Update()
     {
-        //Logica para gerar plataformas // Se objeto estiver fora da camera
-        if(transform.position.x < point.position.x)
+        if(GameController.current.PlayerIsAlive)
         {
+            //Logica para gerar plataformas // Se objeto estiver fora da camera
+            if(transform.position.x < point.position.x)
+            {
 
-            float Distance = Random.Range(minDistance, maxDistance);
-            
-            //Gera nova plataforma
-            transform.position = new Vector3(transform.position.x + platformWidth + Distance, 
-                transform.position.y, 0);
+                float Distance = Random.Range(minDistance, maxDistance);
+                
+                //Gera nova plataforma
+                transform.position = new Vector3(transform.position.x + platformWidth + Distance, 
+                    transform.position.y, 0);
 
-            //Instaciando nova plataforma na cena
-            Instantiate(Platform, transform.position, transform.rotation);
+                //Instaciando nova plataforma na cena
+                Instantiate(Platform, transform.position, transform.rotation);
+            }
         }
     }
 }

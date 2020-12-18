@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     
     public float Speed;
     private Transform backPoint;
-
     private Animator animator;
     private Rigidbody2D rig;
 
@@ -21,14 +20,14 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        //Mesma logica da bala só que para a esquerda
-        //transform.Translate(Vector3.left * Speed * Time.deltaTime); 
-
-        rig.velocity = new Vector2(-Speed, rig.velocity.y);
-
-        if(transform.position.x < backPoint.position.x)      
+        if(GameController.current.PlayerIsAlive)
         {
-            Destroy(gameObject);
+            rig.velocity = new Vector2(-Speed, rig.velocity.y);
+
+            if(transform.position.x < backPoint.position.x)      
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -38,6 +37,8 @@ public class Enemy : MonoBehaviour
         //Se o inimigo bateu na bala
         if(collision.gameObject.tag == "bullet")
         {
+            GetComponent<CircleCollider2D>().enabled = false;
+            GameController.current.AddScore(10); // Ao matar inimigo ganha 10 moedas
             animator.SetTrigger("destroy");
             Destroy(gameObject, 1f);
         }
