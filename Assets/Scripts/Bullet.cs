@@ -6,15 +6,14 @@ public class Bullet : MonoBehaviour
 {
 
     public float Speed;
-
-    void Start()
-    {
+    
+    void Start() {
         Destroy(gameObject, 2f);
     }
 
     void Update()
     {
         //Movimentar a bola para direita
-        transform.Translate(Vector3.right * Speed * Time.deltaTime);
+        transform.Translate(Vector3.right * Speed * Time.deltaTime)        ;
     }
 }
